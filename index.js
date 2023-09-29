@@ -2,9 +2,15 @@ const http = require('http');
 const PORT = 3000;
 
 const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World!');
+  const url = req.url;
+  const id = url.split("/")[1];
+
+  const destination = `${process.env.BASE_URL}/${id}`;
+
+  console.log(`===> Redirecting to ${destination}`)
+
+  res.writeHead(302, { Location: destination });
+  res.end();
 });
 
 server.listen(PORT, () => {

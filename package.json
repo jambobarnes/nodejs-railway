@@ -1,7 +1,7 @@
 {
-  "name": "nodejs-app",
+  "name": "redirect-azure-appservice",
   "version": "1.0.0",
-  "description": "A minimal Node.js web application.",
+  "description": "Simple server to redirect a user to a long link from a pretty link. Parses the request URL path and redirects to a base URL appended with the request URL path value",
   "main": "index.js",
   "author": "alphasec",
   "license": "MIT",
